@@ -13,7 +13,7 @@
             name="dough"
             value="light"
             class="visually-hidden"
-            @input="emit('update:modelValue', dough.value)"
+            @input="emit('update:modelValue', dough.id)"
           />
           <img :src="getImage(dough.image)" :alt="dough.name" />
           <b>{{ dough.name }}</b>
@@ -27,8 +27,8 @@
 <script setup>
 defineProps({
   modelValue: {
-    type: String,
-    default: "",
+    type: Number,
+    required: true,
   },
   items: {
     type: Array,

@@ -12,7 +12,7 @@
         name="sauce"
         :value="sauce.value"
         :checked="sauce.value === modelValue"
-        @input="emit('update:modelValue', sauce.value)"
+        @input="emit('update:modelValue', sauce.id)"
       />
       <span>{{ sauce.name }}</span>
     </label>
@@ -22,8 +22,8 @@
 <script setup>
 defineProps({
   modelValue: {
-    type: String,
-    default: "",
+    type: Number,
+    required: true,
   },
   items: {
     type: Array,

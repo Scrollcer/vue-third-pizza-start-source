@@ -8,7 +8,7 @@
           :key="size.id"
           class="diameter__input diameter__input--small"
           :class="`diameter__input--${size.value}`"
-          @input="emit('update:modelValue', size.value)"
+          @input="emit('update:modelValue', size.id)"
         >
           <input
             type="radio"
@@ -26,8 +26,8 @@
 <script setup>
 defineProps({
   modelValue: {
-    type: String,
-    default: "",
+    type: Number,
+    required: true,
   },
   items: {
     type: Array,
